@@ -6,11 +6,9 @@
 */
 
 const int soundSensorPin = A0; // Analog pin connected to the sound sensor module
-const int ledPin = 13; // LED pin
 
 void setup() {
   pinMode(soundSensorPin, INPUT); // Set sound sensor pin as input
-  pinMode(ledPin, OUTPUT); // Set LED pin as output
   Serial.begin(9600); // Initialize serial communication
 }
 
@@ -22,12 +20,10 @@ void loop() {
   Serial.println(sensorValue);
   
   // If sensor value is above a threshold, turn on LED
-  if (sensorValue > 500) {
-    digitalWrite(ledPin, HIGH); // Turn on LED
-    Serial.println("Sound Detected!");
-  } else {
-    digitalWrite(ledPin, LOW); // Turn off LED
-  }
+  if (sensorValue > 500) 
+  {
+\    Serial.println("Sound Detected!");
+  } 
   
   delay(100); // Delay for stability
 }
